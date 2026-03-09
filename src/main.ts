@@ -1,11 +1,27 @@
 import { Plugin } from "obsidian";
+import {
+	type LinkCardsSettings,
+	DEFAULT_SETTINGS,
+	LinkCardsSettingTab,
+} from "./settings";
 
 export default class LinkCardsPlugin extends Plugin {
+	settings: LinkCardsSettings = DEFAULT_SETTINGS;
+
 	async onload() {
-		console.log("Link Cards plugin loaded");
+		await this.loadSettings();
+		this.addSettingTab(new LinkCardsSettingTab(this.app, this));
 	}
 
-	onunload() {
-		console.log("Link Cards plugin unloaded");
+	async loadSettings() {
+		this.settings = Object.assign(
+			{},
+			DEFAULT_SETTINGS,
+			await this.loadData()
+		);
+	}
+
+	async saveSettings() {
+		await this.saveData(this.settings);
 	}
 }
