@@ -1,0 +1,119 @@
+.linkcard {
+	display: flex;
+	gap: 16px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 16px;
+	background: var(--background-secondary);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+	transition: box-shadow 0.15s ease;
+	overflow: hidden;
+}
+
+.linkcard:hover {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.linkcard-image {
+	flex-shrink: 0;
+	width: 120px;
+	height: 90px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.linkcard-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.linkcard-content {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.linkcard-header {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.linkcard-favicon {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+}
+
+.linkcard-site {
+	font-size: var(--font-smallest);
+	color: var(--text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+.linkcard-title {
+	font-size: var(--font-ui-medium);
+	font-weight: var(--font-semibold);
+	color: var(--text-accent);
+	text-decoration: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.linkcard-title:hover {
+	text-decoration: underline;
+}
+
+.linkcard-description {
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+	margin: 0;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.linkcard-tldr {
+	font-size: var(--font-ui-small);
+	padding: 8px;
+	border-radius: 4px;
+	background: var(--background-modifier-message);
+}
+
+.linkcard-summary {
+	font-size: var(--font-ui-small);
+	color: var(--text-normal);
+	margin: 0;
+}
+
+.linkcard-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+.linkcard-tag {
+	font-size: var(--font-smallest);
+	padding: 2px 8px;
+	border-radius: 12px;
+	background: var(--background-modifier-hover);
+	color: var(--text-muted);
+}
+
+@media (max-width: 500px) {
+	.linkcard {
+		flex-direction: column;
+	}
+
+	.linkcard-image {
+		width: 100%;
+		height: 160px;
+	}
+}
