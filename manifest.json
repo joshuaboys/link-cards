@@ -1,0 +1,9 @@
+{
+	"id": "obsidian-link-cards",
+	"name": "Link Cards",
+	"version": "0.1.0",
+	"minAppVersion": "1.0.0",
+	"description": "Save links as visual cards with metadata and optional AI-generated summaries",
+	"author": "joshuaboys",
+	"isDesktopOnly": false
+}
